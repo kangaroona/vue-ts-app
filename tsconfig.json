@@ -13,7 +13,12 @@
     "allowSyntheticDefaultImports": true,
     "lib": ["ESNext", "DOM"],
     "noEmit": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@pages/*": ["pages/*"],
+      "@components/*": ["components/*"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   // "references": [{ "path": "./tsconfig.node.json" }],

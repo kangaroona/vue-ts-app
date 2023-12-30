@@ -1,20 +1,19 @@
 <script setup lang="ts">
-import { ref, onMounted, reactive } from "vue";
+import { ref, onMounted, reactive, Ref } from "vue";
 import axois from "axios";
 defineProps({
   msg: String,
 });
-const getList = async () => {
+const getList = async (): Promise<{ data: { data: unknown[] } }> => {
   return await axois.get("/mock/api/getStatusList");
 };
 
-onMounted(async () => {
+onMounted(async (): Promise<void> => {
   try {
     const response = await getList();
     // 更新数据
     // console.log(response.data);
     responseData.data = response.data?.data;
-    console.log(responseData);
   } catch (error) {
     console.error("Error fetching data: ", error);
   }
@@ -22,7 +21,7 @@ onMounted(async () => {
 let responseData = reactive({
   data: [],
 });
-const count = ref(0);
+const count: Ref<number> = ref(0);
 </script>
 
 <template>
