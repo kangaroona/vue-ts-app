@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted, reactive, Ref } from "vue";
+import { onMounted, reactive } from "vue";
 import axois from "axios";
+import { useCounterStore } from "@stores/home";
+const counter = useCounterStore();
 defineProps({
   msg: String,
 });
@@ -21,7 +23,7 @@ onMounted(async (): Promise<void> => {
 let responseData = reactive({
   data: [],
 });
-const count: Ref<number> = ref(0);
+// const count: Ref<number> = ref(0);
 </script>
 
 <template>
@@ -32,11 +34,9 @@ const count: Ref<number> = ref(0);
     </li>
   </ul>
   <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
+    <button type="button" @click="counter.increment()"
+      >count is {{ counter.count }}</button
+    >
   </div>
 </template>
 
