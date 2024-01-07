@@ -1,11 +1,11 @@
 <script setup lang="ts">
 // import { useUserStore } from "@/store/user";
-import { watch, ref } from "vue";
-import { useRoute, useRouter } from "vue-router";
+// import { watch, ref } from "vue";
+// import { useRoute, useRouter } from "vue-router";
 import { useCounterStore } from "@stores/home";
 import HelloWorld from "@components/HelloWorld.vue";
-const route = useRoute();
-const router = useRouter();
+// const route = useRoute();
+// const router = useRouter();
 const x = ref(0);
 const y = ref(0);
 const state = useCounterStore();

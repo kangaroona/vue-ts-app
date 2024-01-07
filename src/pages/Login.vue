@@ -6,7 +6,6 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 import { useUserStore } from "@stores/user";
-import { onMounted } from "vue";
 const store = useUserStore();
 let { user } = storeToRefs(store);
 function clickHandle() {
